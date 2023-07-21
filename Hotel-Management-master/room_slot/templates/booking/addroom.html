@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 25%;
+            height: 600px;
+            background-color:  rgb(76,95,124);
+            float: left;
+            font-size: larger;
+        }
+        .div2{
+            float: left;
+            height: 60px;
+            width: 75%;
+            background-color: rgb(255, 255, 255);
+        }
+        .div2 h3{
+            padding-left: 90%;
+        }
+        .div3{
+            float: left;
+            width:75%;
+            height: 540px;
+            background-color: rgb(246,244,244);
+        }
+        .div4{
+            float: left;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            background-color: rgb(255, 255, 255);
+            width: 94%;
+            height: 80%;
+            font-family: 'prompt', sans-serif;
+        }
+        .div4 h3{
+            margin-left: 20px;
+            font-family: 'Fanwood Text', serif;
+            font-size: larger;
+        }
+        .frm1{
+            float: left;
+            margin-left: 40px;
+            font-size: 16px;
+        }
+        .frm2{
+            float: left;
+            margin-left: 100px;
+            font-size: 16px;
+        }
+        input{
+            width: 360px;
+            height: 25px;
+            border-radius: 8px;
+            background-color: rgb(211, 211, 211);
+            border-color: rgb(211, 211, 211);
+            border: none;
+            margin-top: 10px;
+        }
+        .frm3{
+            height: 70px;
+        }
+        .frm4{
+            margin-left: 100px;
+        }
+        .frm5{
+            width: 160px;
+            height: 23px;
+            margin-right: 30px;
+            margin-top: 30px;
+            background-color: rgb(76, 94,124);
+            color: white;
+            font-size: larger;
+            border: none;
+            border-radius: 10px;
+        }
+        .material-symbols-outlined{
+            font-size: larger;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        input[type="file"]{
+             display: none;
+        }
+        label{
+            display: block;
+            position: relative;
+            background-color: rgb(211, 211, 211);
+            color: black;
+            text-align: center;
+            font-size: 18px;
+            height: 70px;
+            border-radius: 8px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1 style="color: white;padding-left: 10px;"><span class="material-symbols-outlined">
+            location_city
+            </span>HOTEL NAME</h1>
+        <h3 style="color: white;padding-left: 10px;font-size:x-large;"><span class="material-symbols-outlined">
+            home
+            </span>&nbsp;&nbsp;<a href="{% url 'homepage' %}">Home</a></h3>
+        <h3 style="color: white;padding-left: 10px;font-size:x-large;"><span class="material-symbols-outlined">
+            calendar_month
+            </span>&nbsp;&nbsp;<a href="{% url 'bookingpage' %}">Bookings</a></h3>
+        <h3 style="color: white;padding-left: 10px;font-size:x-large;"><span class="material-symbols-outlined">
+            meeting_room
+            </span>&nbsp;&nbsp;Room</h3>
+        <h5 style="color: white;padding-left: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'allrpage' %}">All Rooms</a></h5>
+        <h5 style="padding-left: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'addrpage' %}" style="color: black;">Add Rooms</a></h5>
+    
+    </div>
+    <div class="div2">
+       <h3 style="font-size: xx-large; margin-top: 5px;margin-right: 7px;"><span class="material-symbols-outlined">
+        account_circle
+        </span></h3>
+    </div>
+    <div class="div3">
+        <div class="div4">
+            <h3>Add Room Details</h3>
+            <form class="frm1">
+                Room Type<br><input type="text"><br><br><br>
+                price<br><input type="text"><br><br><br>
+                upload images<br><br><input type="file" id="upload_button">
+                <label for="upload_button"><span class="material-symbols-outlined" style="font-size: 30px;margin-top: 10px;margin-right: 5px;">
+                    upload
+                    </span>choose photo</label><br><br><br>
+                    
+            </form>
+            <form class="frm2">
+                ac/non ac<br><input type="text"><br><br><br>
+                availablity<br><input type="text"><br><br><br>
+                description<br><input type="text" class="frm3"><br>
+                <button onclick="link(this)" value="add.html" class="frm5" style="margin-left: -140px;"><a href="{% url 'addpage' %}">submit</button>
+            </form>
+            
+                
+            
+        </div>
+    </div>
+    <script>
+        function link(link){
+           console.log(link.value);
+           location.href=link.value;
+         }
+    </script>
+</body>
+</html>

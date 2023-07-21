@@ -1,0 +1,61 @@
+{% extends 'buses/base.html' %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+                <form action="{% url 'signup' %}" method="POST">
+                    <h2>Sign up</h2>
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Email</label>
+                        <div class="col-10">
+                            <input name='email' class="form-control" type="text" id="example-email-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Username</label>
+                        <div class="col-10">
+                            <input name='name' class="form-control" type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Password</label>
+                        <div class="col-10">
+                            <input name='password' class="form-control" type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Mobile</label>
+                        <div class="col-10">
+                            <input name='name' class="form-control" type="number" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label" style="margin-top:-10px;">Gender</label>
+                    <div class="form-check" style="margin-left:50px;">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Male
+                        <label class="form-check-label" for="radio1"></label>
+                      </div>
+                      <div class="form-check" style="margin-left:50px;">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Female
+                        <label class="form-check-label" for="radio2"></label>
+                      </div>
+                      <div class="form-check" style="margin-left:50px;">
+                        <input type="radio" class="form-check-input" id="radio3" name="optradio" value="option3">Others
+                        <label class="form-check-label" for="radio3"></label>
+                      </div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3" style="margin-left:95px;margin-top:-35px;width:450px;"></textarea>
+                    </div><br>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-success float-right" style="margin-right:460px;">Sign up</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

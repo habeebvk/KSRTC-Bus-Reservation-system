@@ -1,0 +1,166 @@
+.container-fluid{
+    width: 100%;
+    height: 400px;
+}
+.header{
+    width: 100%;
+    height: 120px;
+}
+.left{
+    width: 400px;
+    height: 90px;
+    float: left;
+}
+.right{
+    width: 620px;
+    height: 90px;
+    float: right;
+}
+#text{
+    margin-left: 130px;
+    margin-top: -95px;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+}
+.btn1{
+    font-family: 'poppins',sans-serif;
+    background-color: darkcyan;
+    width:100px;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    border:none;
+    margin-top: 30px;
+}
+.btn{
+    font-family: 'Poppins',sans-serif;
+    margin-left: 20px;
+    background-color: darkcyan;
+    width:100px;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    border:none;
+    margin-top: 30px;
+}
+.footer{
+    width: 100%;
+    height: 250px;
+    background-color: #777;
+    margin-top: 370px;
+}
+.fleft{
+    position: relative;
+    width: 500px;
+    height: 250px;
+    float: left;
+    z-index: 1;
+}
+.middle{
+    width: 10px;
+    height: 250px;
+    float: left;
+}
+.fright{
+    position: relative;
+    z-index:1;
+    width: 755px;
+    height: 250px;
+    float: right;
+}
+#contact{
+    font-family: 'Nunito',sans-serif;
+    font-size: 20px;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+#implinks{
+    font-family: 'Nunito',sans-serif;
+    font-size: 20px;
+    padding-left: 100px;
+    margin-top: 50px;
+}
+.details{
+    font-family: 'Nunito',sans-serif;
+    margin-left: 60px;
+}
+.link{
+    font-family: 'Nunito',sans-serif;
+    margin-left: 100px;
+}
+.icon{
+    width: 70px;
+    height: 10px;
+    background-color: aqua;
+}
+.icons{
+    width: 50px;
+    height: 250px;
+    float: left;
+}
+#txt{
+    font-family: 'Montserrat',sans-serif;
+    text-align: center;
+    margin-bottom: 500px;
+    margin-top: -17px;
+    background-color: #d9d9d9;
+    border-radius: 25px;
+}
+.mid{
+    width: 100%;
+    height: 500px;
+}
+#upcomingtrips{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-top: -490px;
+    margin-left: 100px;
+}
+#trip1{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-left: 100px;
+}
+#trip2{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-left: 100px;
+}
+#feedback{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#notice{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-left: 600px;
+    margin-top: -560px;
+}
+.content1{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-left: 500px;
+}
+.content{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    margin-left: 500px;
+}
+.btn3{
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    background-color: darkcyan;
+    width:150px;
+    height: 35px;
+    border-radius: 20px;
+    color: white;
+    border:none;
+    margin-top: 225px;
+    margin-left: 100px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}

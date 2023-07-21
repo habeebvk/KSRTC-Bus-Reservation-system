@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/notifications.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Poppins:wght@300&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="margin-top:10px;">
+        <div class="header">
+        <div class="left">
+        <img src="{% static '/logo.jpeg' %}" style="width:120px;height:100px;margin-top:-5px;">
+        <h1 id="text" style="font-weight:bold;">Kerala State <br> Road <br> Transport Corporation</h1>
+        </div>
+        <div class="right" style="width:650px;">
+            <button class="btn" onclick="link(this)" value="{% url 'package' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;margin-left:90px;">Trip Plan</button>
+            <button class="btn" onclick="link(this)" value="{% url 'home' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Bus</button>
+            <button class="btn" onclick="link(this)" value="{% url 'contactus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:112px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Contact Us</button>
+            <button class="btn" onclick="link(this)" value="{% url 'aboutus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">About Us</button>
+            {% comment %} <button class="btn" onclick="link(this)" value="{% url 'register' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Sign up</button> {% endcomment %}
+        </div>
+        <a href="{% url 'u_homepage' %}"><img src="{% static '/arrow.png' %}" style="width: 30px;height: 30px;margin-left:-400px;margin-top: 150px;"></a>
+        <a href="{% url 'u_homepage' %}"><img src="{% static '/home.png' %}" style="width: 30px;height: 30px;margin-top:150px;"></a>
+        </div>
+        <div class="mid">
+            <h1 id="txt" style="font-weight:bold;">Notifications</h1>
+         <h2 id="upcomingtrips">Upcoming Trips</h2><br>
+         <h2 id="trip1">Malappuram to Munnar</h2>
+         <h2 id="trip2">27/08/2023</h2><br>
+         <h2 id="trip1">Malappuram to Nelliyampathy</h2>
+         <h2 id="trip2">06/06/2023</h2>
+         {% comment %} <h2 id="feedback">Feedback</h2> {% endcomment %}
+         <div> 
+            <form method="POST">
+                <h3 style="font-family:poppins;margin-top:30px;margin-left:100px;fot-size:20px;">Feedback</h3>
+                <div class="content-section" style="margin-left:100px; height:300px; width:50%;">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <fieldset class="form-group">
+                        <label id="{{ field.id_as_label }}">{{ field.html_name }}</label>
+                        {{ field }}
+                    </fieldset>
+            
+                    {% endfor %}
+                    <div class="form-group">
+                        <button class="btn btn-outline-dark">SUBMIT</button>
+                    </div>
+                    
+            </form>
+         </div>
+         {% comment %} <button class="btn3" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Submit</button> {% endcomment %}
+        </div>
+        {% comment %} <input type="text" style="width: 70%;height: 200px;margin-left: 100px;margin-top:-700px;background-color: #D9D9D9;border:none;border-radius: 5px;"> {% endcomment %}
+        <h2 id="notice" style="margin-top:-570px;">Notice</h2>
+        <div class="autoScroller-container" style="position: relative; overflow: hidden;">
+            <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="3" behavior="scroll" height="130;" direction="up" loop="infinite" style="height: 200px;">
+                    <div>
+                        <ul>
+                            <li class="content1">Delayed arrival of buses due to <br>heavy traffic at Kanjipuram junction.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="content">Inauguration of the new ksrtc center <br> at kozhikode to be held on december 30 2022.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="content">Introducing Sleeper Services shortly.&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="content">Pre/postpone tickets- facility available in Counter tickets.&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="content">Book Round Trip Tickets -Get 10% Discount.&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="content">Mobile App – Download “Ente KSRTC”&nbsp;</li>
+                        </ul>
+                    </div> 
+                    <div>
+                        <ul>
+                            <li class="content">Invites application for the appointment of Deputy Maanager(HR), Deputy Manager(IT), Deputy Manager(Accounts), Statistical Trainee & Accounts Trainee and Executive Engineer(Civil) & Assistant Executive Engineer(Civil) on contract basis&nbsp;</li>
+                        </ul>
+                    </div>    
+                    </marquee>
+
+                    
+          </div>
+          {% comment %} <div>
+          {% for i in noti %}
+          <p>{{i.notification}}</p>
+          {% endfor %}
+          </div> {% endcomment %}
+        <div class="footer">
+            <div class="fleft">
+            <div class="icons">
+                <img src="{% static '/telephone.png' %}" width="20px" height="20px" style="margin-left:30px;margin-top:85px;position:relative;z-index: 2;">
+                <img src="{% static '/twitter.png' %}" width="20px" height="20px" style="margin-top:20px;margin-left:30px;position:relative;z-index: 2;">
+                <img src="{% static '/pin.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+                <img src="{% static '/inst.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+            </div>
+            <p id="contact" style="color:black;font-weight:bold;font-size:24px">About Us</p>
+            <p class="details" style="color:black;">Phone : +91 534645634</p>
+            <p class="details" style="color:black;">Twitter : ksrtctrip123</p>
+            <p class="details" style="color:black;">Malappuram,Perinthalmanna</p>
+            <p class="details" style="color:black;">Instagram : ksrtc_tourizm</p>
+            </div>
+            <div class="middle">
+                <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:85px;position:relative;z-index: 2;">
+                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                        </div>
+                        <div class="fright">
+                        <p id="implinks" style="margin-top:30px;color:black;font-weight:bold;font-size:24px;">Important Links</p>
+                        <a href="{% url 'package' %}" style="color:black;text-decoration:none;margin-top:20px;position:relative;z-index:1;" target="_blank"><p class="link">Trip Plan</p></a>
+                        <a href="{% url 'aboutus' %}" style="color:black;text-decoration:none;margin-top:55px;position:relative;z-index:1" target="_blank"><p class="link">About us</p></a>
+                        <a href="{% url 'home' %}" style="color:black;text-decoration:none;margin-top:88px;position:relative;z-index:1" target="_blank"><p class="link">Bus</p></a>
+                        <a href="{% url 'contactus' %}" style="color:black;text-decoration:none;margin-top:120px;position:relative;z-index:1;" target="_blank"><p class="link">Contact Us</p></a>
+            </div>
+            </div>
+    </div>
+    <script>
+        function link(link){
+        console.log(link.value);
+        // location.href=link.value;
+        window.open(link.value)
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.container-fluid{
+     width: 100%;
+     height: 1220px;
+     background-color: #E4E1E1;
+}
+#name{
+    font-family: 'Montserrat',sans-serif;
+    text-align: center;
+    padding-top: 30px;
+}
+*{
+    margin-top: 0;
+}
+#checkin{
+    font-family: 'Poppins',sans-serif;
+    margin-left: 180px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+#checkout{
+  font-family: 'Poppins',sans-serif;
+  margin-left: 800px;
+  margin-top: -55px;
+  font-size: 20px;
+}
+#children{
+  font-family: 'Poppins',sans-serif;
+  margin-left: 180px;
+  margin-top: 80px;
+  font-size: 20px;
+}
+#rooms{
+  font-family: 'Poppins',sans-serif;
+  margin-left: 180px;
+  margin-top: 80px;
+  font-size: 20px;
+}
+#adult{
+  font-family: 'Poppins',sans-serif;
+  margin-left: 810px;
+  margin-top: -52px;
+  font-size: 20px;
+}
+#nights{
+  font-family: 'Poppins',sans-serif;
+  margin-left: 810px;
+  margin-top: -97px;
+  font-size: 20px;
+}
+#image{
+  margin-left: 180px;
+}
+#image1{
+  margin-left: 800px;
+}
+#image2{
+  margin-left: 180px;
+}
+#image3{
+  margin-left: 180px;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+.paragraph{
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+input{
+    border: none;
+    background-color: #E4E1E1;
+}
+select{
+    border: none;
+    background-color: #E4E1E1;
+}
+.btn3{
+  font-family: 'Poppins',sans-serif;
+  font-size: 20px;
+  background-color: darkcyan;
+  width:150px;
+  height: 35px;
+  border-radius: 20px;
+  color: white;
+  border:none;
+  margin-left: 500px;
+}
+ 

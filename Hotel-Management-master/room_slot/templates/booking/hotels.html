@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/hotels.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Poppins:wght@300&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="margin-top:10px;">
+        <div class="header">
+        <div class="left">
+        <img src="{% static '/logo.jpeg' %}" style="width:120px;height:100px;margin-top:-5px;">
+        <h1 id="text" style="font-weight:bold;">Kerala State <br> Road <br> Transport Corporation</h1>
+        </div>
+        <div class="right" style="width:650px;">
+                <button class="btn" onclick="link(this)" value="{% url 'cer' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Certificates</button>
+                <button class="btn" onclick="link(this)" value="{% url 'package' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Trip Plan</button>
+                <button class="btn" onclick="link(this)" value="{% url 'home' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Bus Reservation</button>
+                <button class="btn" onclick="link(this)" value="{% url 'contactus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:112px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Contact Us</button>
+                <button class="btn" onclick="link(this)" value="{% url 'aboutus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">About Us</button>
+        </div>
+        <img src="{% static '/arrow.png' %}" style="width: 30px;height: 30px;margin-top: 150px;margin-left:-400px;" onclick="cross(this)">
+        <a href="{% url 'u_homepage' %}"><img src="{% static '/home.png' %}" style="width: 30px;height: 30px;margin-top:150px;"></a>
+        </div>
+            <h1 id="nearby" style="font-weight:bold;">Nearby Hotels</h1>
+
+            <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="container">
+                  <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                      {% comment %} <h5 class="text-dark text-uppercase" style="letter-spacing: 3px;font-size:25px;">Nearby Hotels</h5> {% endcomment %}
+                      <!-- <h1 class="display-5 mb-0">Our Excellent CCTV Security Services</h1> -->
+                  </div>
+                     
+                      <div class="container" style="margin-top:-500px;">
+                          <div class="row">
+                              {% for i in city %}
+                             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                                 <div class="service-item bg-dark border-bottom border-5 border-light rounded">
+                                     <div class="position-relative p-5" style="width:100px;height:500px;">
+                                        <i class="bi bi-card-list d-block display-1 fw-normal text-secondary mb-3"></i>
+                                        <div class="position-relative p-5" style="margin-top:-100px;">
+                                          <img style= "margin-right:100px;width:300px;height:170px;margin-left:-70px;margin-top:20px;" src="/media/{{i.img}}"/></a>
+                                        </div>
+                                        <h5 class="text-light mb-0" id="city_name" style="font-family:'Poppins',sans-serif;text-align:center;">{{i.name}}</h5>
+                                        <h5 class="text-light mb-0" id="city_name" style="font-family:'Poppins',sans-serif;">{{i.room_no}} rooms available</h5>
+                                        <h5 class="text-light mb-0" id="city_name" style="font-family:'Poppins',sans-serif;">{{i.type}}</h5>
+                                        {% comment %} <a href="{% url 'cert' i.id  %}" style="text-decoration:none;color:white;font-family:'Poppins',sans-serif;">Certificate</a> {% endcomment %}
+                                        <a href="{% url 'index' %}" style="text-decoration:none;color:white;font-family:'Poppins',sans-serif;">Room</a>
+                                      </div>
+                                  </div>
+                              </div>
+                             {% endfor%}
+                          </div>
+                        </div>
+            {% comment %} <div cards>
+            <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 380px;margin-top: -400px;margin-bottom: 400px;">
+                <img src="https://architecturesideas.com/wp-content/uploads/2018/10/hotel-room-interior-design-19.jpg" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">Le Celestium <br>6 rooms available <br>AC </p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:40px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room2' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 100px;margin-top: -750px;margin-bottom: 500px;">
+                <img src="https://cache.marriott.com/marriottassets/marriott/DALBR/dalbr-suite-0022-hor-clsc.jpg?interpolation=progressive-bilinear&" class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> The Panoramic Gateway<br> 4 rooms available <br> AC </p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:25px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room3' %}" style="width:130px;margin-left:45px;">View Details</button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 100px;margin-top: -850px;margin-bottom: 400px;margin-left: 660px;">
+                <img src="https://th.bing.com/th/id/OIP.6NLV16bzAw5tAwKdmk8JmgHaE8?pid=ImgDet&rs=1" class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> Grand Plaza <br> 4 rooms available <br> AC</p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:25px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'rooms' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 100px;margin-top: -750px;margin-bottom: 400px;margin-left: 940px;">
+                <img src="https://th.bing.com/th/id/OIP.-4LBgzw1z6cZyXn7I2rj5wHaE8?pid=ImgDet&rs=1"  class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> Casa Montana  <br> 6 rooms available <br> AC </p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:40px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room3' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 660px;margin-top: -350px;margin-bottom: 100px;">
+                <img src="https://th.bing.com/th/id/OIP.jk_yXXD22SKvhQNQMm6YYwHaFj?pid=ImgDet&w=474&h=355&rs=1" class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> Blanket Hotel & Spa <br>4 rooms available <br> AC</p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:25px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room4' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 380px;margin-top: -450px;margin-bottom:100px;">
+                <img src="https://www.maids.com/blog/wp-content/uploads/2020/01/bigstock-Hotel-Bed-1653767.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> Kurinji Wanderlust Munnar <br> 4 rooms available <br> Non AC</p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:60px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room5' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 100px;margin-top:-450px;margin-bottom: 100px;">
+                <img src="https://th.bing.com/th/id/R.31f687a5b77e16bcf5948ba9a30559fd?rik=Y4NPnmexLV36dw&riu=http%3a%2f%2fform.dodlodging.net%2ffiles%2fphotos%2f2012%2f3%2f62647d29-6018-4fbc-ae99-1bfdfd27cfa1__L.jpg&ehk=OQuXat56CQ5HNNeWRBaQB%2bgtm6nppjO2yTAKeECbIT8%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> Fragrant Nature Munnar <br> 6 rooms available <br> AC </p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:25px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room6' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div>
+              <div class="card" style="width: 250px;height: 350px;background-color: white;margin-left: 940px;margin-top: -450px;margin-bottom: 100px;">
+                <img src="https://d1vp8nomjxwyf1.cloudfront.net/wp-content/uploads/sites/9/2019/11/29145839/Quarto-Twin-2.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <p class="card-text"> Isaacs Residency <br> 4 rooms available <br> Non AC </p>
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;margin-left:60px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top: -10px;margin-bottom: 20px;">
+                  <img src="https://th.bing.com/th/id/OIP.kWQ3fhddQUkS7kVwZmHK_QAAAA?pid=ImgDet&rs=1" style="width: 30px;height: 30px;margin-top:-10px;margin-bottom:20px;">
+                  <button class="viewdetails" onclick="link(this)" value="{% url 'room7' %}" style="width:130px;margin-left:45px;">View Details </button>
+                </div>
+              </div><br><br><br>
+            </div> {% endcomment %}
+<div style="background-color:#777;height:270px;width:1330px;margin-left:-110px;">
+<div class="footer" style="height:270px;margin-top:20px;">
+<div class="fleft" style="background-color:#777;">
+<div class="icons">
+    <img src="{% static '/telephone.png' %}" width="20px" height="20px" style="margin-left:30px;margin-top:85px;position:relative;z-index: 2;">
+    <img src="{% static '/twitter.png' %}" width="20px" height="20px" style="margin-top:20px;margin-left:30px;position:relative;z-index: 2;">
+    <img src="{% static '/pin.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+    <img src="{% static '/inst.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+</div>
+<p id="contact" style="color:black;font-weight:bold;font-size:24px;">About Us</p>
+<p class="details" style="color:black;">Phone : +91 534645634</p>
+<p class="details" style="color:black;">Twitter : ksrtctrip123</p>
+<p class="details" style="color:black;">Malappuram,Perinthalmanna</p>
+<p class="details" style="color:black;">Instagram : ksrtc_tourizm</p>
+</div>
+<div class="middle">
+    <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:85px;position:relative;z-index: 2;">
+            <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:20px;position:relative;z-index: 2;">
+            <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:20px;position:relative;z-index: 2;">
+            <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:20px;position:relative;z-index: 2;">
+            </div>
+            <div class="fright" style="width:400px;margin-right:310px;margin-top:-200px;margin-top:-20px;">
+            <p id="implinks" style="margin-top:50px;color:black;font-weight:bold;font-size:24px;position:relative;z-index:2;">Important Links</p>
+            <a href="{% url 'package' %}" style="color:black;text-decoration:none;position:relative;z-index:1;margin-left:80px;" target="_blank"><p class="link" style="margin-top:-22px;">Trip Plan</p></a>
+            <a href="{% url 'aboutus' %}" style="color:black;text-decoration:none;position:relative;z-index:1" target="_blank"><p class="link">About us</p></a>
+            <a href="{% url 'home' %}" style="color:black;text-decoration:none;position:relative;z-index:1" target="_blank"><p class="link">Bus</p></a>
+            <a href="{% url 'contactus' %}" style="color:black;text-decoration:none;position:relative;z-index:1;" target="_blank"><p class="link">Contact Us</p></a>
+            </div>
+            </div>
+          </div>
+    </div>  
+    <script>
+      function link(link){
+      console.log(link.value);
+      // location.href=link.value;
+      window.open(link.value)
+  }
+  function cross(cross){
+    console.log(cross.value);
+    // location.href=link.value;
+    window.close(cross.value)
+}
+</script>  
+</body>
+</html>

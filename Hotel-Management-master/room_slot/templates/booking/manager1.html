@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+      body{
+        background-color:rgb(211,208,208);
+      }
+      .center{
+        background-color:rgb(246,246,246);
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        
+      }
+      input{
+        border-radius: 15px;
+        background-color: #cbcdca;
+        font-size: 19px;
+        width: 90%;
+        padding: 10px;
+        font-family: 'Prompt', sans-serif;
+        border: none;
+        border-color: #cbcdca;
+      }
+      #log{
+        background-color: rgb(76,95,124);
+        border-radius: 10px;
+        font-size: 32px;
+        color:white;
+        width: 94%;
+        border-bottom: 50px;
+        padding: 8px;
+        font-family: 'Prompt', sans-serif;
+        font-weight: bold;
+        text-decoration:none;
+        border-color: rgb(76,95,124);
+      }
+      p{
+        font-size: 30px;
+        padding-top: 10px;
+        font-family: 'prompt' , sans-serif;
+        
+      }
+      .para{
+        padding-bottom: 10px;
+        font-size: 20px;
+        text-decoration:none;
+      }
+      a{
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+<div class="center">
+    <center><form>
+        <p>LOGIN</p><br>
+    <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;enter your email"><br><br>
+    <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;enter your password"><br><br>
+    <button type="submit" id="log" ><a href="{% url 'homepage' %}"style="color:white;">LOGIN</button><br><br>
+    <p class="para"><span style="color:black">don't have an account?</span><a href="{% url 'manager2' %}" style="color:red">register now</a><p>
+    </form></center>
+    
+</div>
+</body>
+</html>

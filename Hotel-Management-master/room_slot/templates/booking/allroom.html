@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Lexend+Peta:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 25%;
+            height: 600px;
+            background-color:  rgb(76,95,124);
+            float: left;
+            font-size: larger;
+        }
+        .div2{
+            float: left;
+            height: 60px;
+            width: 75%;
+            background-color: rgb(255, 255, 255);
+        }
+        .div2 h3{
+            padding-left: 90%;
+        }
+        .div3{
+            float: left;
+            width:75%;
+            height: 540px;
+            background-color: rgb(246,244,244);
+        }
+        .div3 h3{
+            padding-left: 18px;
+            font-family: 'Fanwood Text', serif;
+            float: left;
+            font-size: 25px;
+        }
+        .div3 h2{
+            float: right;  
+            margin-right: 35px;
+            font-size: x-large;
+            background-color: blue;
+            color: white;
+            margin-top: 15px;
+            width: 20px;
+            height: 30px;
+            padding-left: 7px;
+            padding-top: 3px;
+        }
+        table{
+            background-color: rgb(255, 255, 255);
+            font-family: 'Lexend Peta', sans-serif; 
+            border-bottom: 2px;
+            width: 98%;
+            height: 458px;
+            border-collapse: collapse;
+            margin-left: 7px;
+        }
+        td{
+            padding-left: 15px;
+            padding-right: 15px;
+            border-bottom: 1px solid black;
+        }
+        th{
+            border-bottom: 1px solid black;
+        }
+        .material-symbols-outlined{
+            font-size: larger;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1 style="color: white;padding-left: 10px;"><span class="material-symbols-outlined">
+            location_city
+            </span>HOTEL NAME</h1>
+        <h3 style="color: white;padding-left: 10px;font-size:x-large;"><span class="material-symbols-outlined">
+            home
+            </span>&nbsp;&nbsp;<a href="{% url 'homepage' %}">Home</a></h3>
+        <h3 style="color: white;padding-left: 10px;font-size:x-large;"><span class="material-symbols-outlined">
+            calendar_month
+            </span>&nbsp;&nbsp;<a href="{% url 'bookingpage' %}">Bookings</a></h3>
+        <h3 style="color: white;padding-left: 10px;font-size:x-large;"><span class="material-symbols-outlined">
+            meeting_room
+            </span>&nbsp;&nbsp;Room</h3>
+        <h5 style="padding-left: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'allrpage' %}" style="color: black;">All Rooms</a></h5>
+        <h5 style="color: white;padding-left: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'addrpage' %}">Add Rooms</a></h5>
+    
+    </div>
+    <div class="div2">
+       <h3 style="font-size: xx-large; margin-top: 5px;margin-right: 7px;"><span class="material-symbols-outlined">
+        account_circle
+        </span></h3>
+    </div> 
+    <div class="div3">
+       <h3>Room list</h3>
+       <h2 style="margin-right: 60px;"><a href="{% url 'addrpage' %}">+</a></h2>
+       <table>
+        <tr>
+            <th>no</th>
+            <th>room no</th>
+            <th>room type</th>
+            <th>ac/non ac</th>
+            <th>price</th>
+            <th>availablity</th>
+            <th ><a href="{% url 'addrpage' %}" style="color: blue; font-size:xx-large;margin-right: 40px;">+</a></th>
+        </tr><tr>
+            <td>1</td>
+            <td>10A</td>
+            <td>single</td>
+            <td>AC</td>
+            <td>950/-</td>
+            <td>available</td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>2</td>
+            <td>12B</td>
+            <td>double</td>
+            <td>non AC</td>
+            <td>800/-</td>
+            <td><span style="color:orange ;">booked</span></td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>3</td>
+            <td>13D</td>
+            <td>single</td>
+            <td>non AC</td>
+            <td>750/-</td>
+            <td>available</td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>4</td>
+            <td>11C</td>
+            <td>single</td>
+            <td>AC</td>
+            <td>1000/-</td>
+            <td>available</td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>5</td>
+            <td>10B</td>
+            <td>double</td>
+            <td>non AC</td>
+            <td>1000/-</td>
+            <td>available</td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>6</td>
+            <td>12A</td>
+            <td>single</td>
+            <td>AC</td>
+            <td>950/-</td>
+            <td><span style="color:orange ;">booked</span></td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>7</td>
+            <td>12C</td>
+            <td>double</td>
+            <td>AC</td>
+            <td>1200/-</td>
+            <td>available</td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr><tr>
+            <td>8</td>
+            <td>9B</td>
+            <td>double</td>
+            <td>AC</td>
+            <td>1200/-</td>
+            <td><span style="color:orange ;">booked</span></td>
+            <td><span class="material-symbols-outlined">
+                edit
+                </span><span class="material-symbols-outlined">
+                    delete
+                    </span></td>
+        </tr>
+       </table>
+    </div> 
+</body>
+</html>

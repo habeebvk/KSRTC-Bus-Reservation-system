@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        body{
+          background-color:rgb(211,208,208);
+        }
+        .center{
+          background-color:rgb(246,246,246);
+          margin-left: 30%;
+          margin-right: 30%;
+          margin-top: 20%;
+          margin-bottom: 20%;
+        }
+        input{
+          border-radius: 15px;
+          background-color: rgb(203,205,202);
+          font-size: 19px;
+          width: 90%;
+          padding: 10px;
+          font-family: 'Prompt', sans-serif;
+          border: none;
+        border-color: #cbcdca;
+        }
+        #reg{
+          background-color: rgb(76,95,124);
+          border-radius: 10px;
+          font-size: 32px;
+          color: white;
+          width: 94%;
+          border-bottom: 50px;
+          padding: 10px;
+          font-family: 'prompt', sans-serif;
+          font-weight:bold;
+        }
+        p{
+          font-size: 30px;
+          padding-top: 10px;
+          font-family: 'prompt' , sans-serif;
+        }
+        .para{
+          padding-bottom: 10px;
+          font-size: 20px;
+        }
+        #mgr{
+            border-radius: 0px;
+        }
+      </style>
+</head>
+<body>
+    <div class="center">
+      <a href="{% url 'u_homepage' %}"><img src="{% static '/images/home.png' %}" style="width: 30px;height: 30px;margin-top: 150px;"></a>
+        <center><form>
+            <p>REGISTER NOW</p><br>
+        <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;enter your name"><br><br>
+        <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;enter your email"><br><br>
+        <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;enter your number"><br><br>
+        <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;enter your password"><br><br>
+        <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;confirm your email"><br><br>
+        <input type="text" value="&nbsp;&nbsp;&nbsp;&nbsp;other" id="mgr"><br><br>
+        <input type="submit" value="REGISTER NOW" id="reg"><br><br>
+        <p class="para">already have an account?<a href="{% url 'manager1' %}" style="color: red;text-decoration:none">Login now</a><p>
+        </form></center>
+    </div>  
+</body>
+</html>

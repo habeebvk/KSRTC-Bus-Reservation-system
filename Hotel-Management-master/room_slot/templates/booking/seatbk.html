@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/seatbk.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Poppins:wght@300&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="margin-top:10px;">
+        <div class="header">
+        <div class="left">
+        <img src="{% static '/images/logo.jpeg' %}" style="width:120px;height:100px;margin-top:-5px;">
+        <h1 id="text" style="font-weight:bold;">Kerala State <br> Road <br> Transport Corporation</h1>
+        </div>
+        <div class="right" style="width:650px;">
+            <button class="btn" onclick="link(this)" value="{% url 'package' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Trip Plan</button>
+            <button class="btn" onclick="link(this)" value="{% url 'mytrips' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">My Trip</button>
+            <button class="btn" onclick="link(this)" value="{% url 'contactus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:112px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Contact Us</button>
+            <button class="btn" onclick="link(this)" value="{% url 'aboutus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">About Us</button>
+            <button class="btn" onclick="link(this)" value="{% url 'register' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Sign up</button>
+        </div>
+        <a href="{% url 'personaldetails' user %}"><img src="{% static '/images/arrow.png' %}" style="width: 30px;height: 30px;margin-left:-400px;margin-top: 110px;"></a>
+        <a href="{% url 'homepage' %}"><img src="{% static '/images/home.png' %}" style="width: 30px;height: 30px;margin-top:110px;"></a>
+        </div>
+        <div class="mid"><br>
+            <div class="txt">
+            <div class="notavailable"></div><br>
+            <h2 id="navbtext">Not Available</p>
+            <div class="available"></div>
+            <h2 id="avbtext">Available</h2>
+            </div>
+            <div class="seatstatus">
+                <button id="A1" onclick="changecolor()">A1</button>
+                <button id="A2" onclick="changecolor1()">A2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="A3" onclick="changecolor2()">A3</button>
+                <button id="A4" onclick="changecolor3()">A4</button>
+                <button id="A5" onclick="changecolor4()">A5</button><br>  
+                <button id="A6" onclick="changecolor5()">A6</button>
+                <button id="A7" onclick="changecolor6()">A7</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="A8" onclick="changecolor7()">A8</button>
+                <button id="A9" onclick="changecolor8()">A9</button>
+                <button id="A10" onclick="changecolor9()">A10</button><br>  
+                <button id="B1" onclick="changecolor10()">B1</button>
+                <button id="B2" onclick="changecolor11()">B2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="B3" onclick="changecolor12()">B3</button>
+                <button id="B4" onclick="changecolor13()">B4</button>
+                <button id="B5" onclick="changecolor14()">B5</button><br>  
+                <button id="B6" onclick="changecolor15()">B6</button>
+                <button id="B7" onclick="changecolor16()">B7</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="B8" onclick="changecolor17()">B8</button>
+                <button id="B9" onclick="changecolor18()">B9</button>
+                <button id="B10" onclick="changecolor19()">B10</button><br>  
+                <button id="C1" onclick="changecolor20()">C1</button>
+                <button id="C2" onclick="changecolor21()">C2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="C3" onclick="changecolor22()">C3</button>
+                <button id="C4" onclick="changecolor23()">C4</button>
+                <button id="C5" onclick="changecolor24()">C5</button><br>  
+                <button id="C6" onclick="changecolor25()">C6</button>
+                <button id="C7" onclick="changecolor26()">C7</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="C8" onclick="changecolor27()">C8</button>
+                <button id="C9" onclick="changecolor28()">C9</button>
+                <button id="C10" onclick="changecolor29()">C10</button><br>  
+                <button id="D1" onclick="changecolor30()">D1</button>
+                <button id="D2" onclick="changecolor31()">D2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="D3" onclick="changecolor32()">D3</button>
+                <button id="D4" onclick="changecolor33()">D4</button>
+                <button id="D5" onclick="changecolor34()">D5</button><br>  
+                <button id="D6" onclick="changecolor35()">D6</button>
+                <button id="D7" onclick="changecolor36()">D7</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="D8" onclick="changecolor37()">D8</button>
+                <button id="D9" onclick="changecolor38()">D9</button>
+                <button id="D10" onclick="changecolor39()">D10</button><br>  
+                <button id="E1" onclick="changecolor40()">E1</button>
+                <button id="E2" onclick="changecolor41()">E2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="E3" onclick="changecolor42()">E3</button>
+                <button id="E4" onclick="changecolor43()">E4</button>
+                <button id="E5" onclick="changecolor44()">E5</button><br>  
+                <button id="E6" onclick="changecolor45()">E6</button>
+                <button id="E7" onclick="changecolor46()">E7</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="E8" onclick="changecolor47()">E8</button>
+                <button id="E9" onclick="changecolor48()">E9</button>
+                <button id="E10" onclick="changecolor49()">E10</button><br>  
+                <button id="F1" onclick="changecolor50()">F1</button>
+                <button id="F2" onclick="changecolor51()">F2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="F3" onclick="changecolor52()">F3</button>
+                <button id="F4" onclick="changecolor53()">F4</button>
+                <button id="F5" onclick="changecolor54()">F5</button>
+            </div>
+            <div class="block">
+                <h2 id="busdetails">Bus Details</h2>
+                <p class="dtls1">Bus No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; KL15 A1293</p>
+                <p class="dtls">Bus Type&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; Superfast</p>
+                <p class="dtls">Conductor&nbsp; :&nbsp;&nbsp; Sivadasan</p>
+                <p class="dtls">Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; 6238562309</p><br>
+                <p class="price">Ticket Price&nbsp;&nbsp;&nbsp;Total Price&nbsp;&nbsp;&nbsp; Selected Seat</p>
+                <p id="A" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="B" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="C" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="D" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="E" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="F" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="G" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="H" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="I" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="J" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="K" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="L" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="M" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="N" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="O" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="P" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="Q" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="R" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="S" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="T" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="U" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="V" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="W" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="X" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="Y" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="Z" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="AA" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="BB" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="CC" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="DD" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="EE" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="FF" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="GG" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="HH" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="II" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="JJ" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="KK" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="LL" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="MM" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="NN" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="OO" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="PP" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="QQ" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="RR" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="SS" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="TT" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="UU" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="VV" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="WW" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="XX" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="YY" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="ZZ" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="AAA" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="BBB" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p id="CCC" style="margin-left: 250px;font-family: 'Montserrat',sans-serif;"></p>
+                <p class="prices">500</p>
+                <p class="name" style="margin-top:10px;">Passenger name</p>
+                <p class="name">Arjith P </p>
+                <p id="cns"></p>
+                <p id="zns"></p>
+                <p id="count"></p>
+                <p id="result" style="margin-top:-120px;"></p>
+                <button class="btn2" onclick="link(this)" value="{% url 'payment' %}">Pay Now</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="fleft">
+            <div class="icons">
+                <img src="{% static '/images/telephone.png' %}" width="20px" height="20px" style="margin-left:30px;margin-top:85px;position:relative;z-index: 2;">
+                <img src="{% static '/images/twitter.png' %}" width="20px" height="20px" style="margin-top:20px;margin-left:30px;position:relative;z-index: 2;">
+                <img src="{% static '/images/pin.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+                <img src="{% static '/images/inst.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+            </div>
+            <p id="contact" style="color:black;font-weight:bold;font-size:24px">About Us</p>
+            <p class="details" style="color:black;">Phone : +91 534645634</p>
+            <p class="details" style="color:black;">Twitter : ksrtctrip123</p>
+            <p class="details" style="color:black;">Malappuram,Perinthalmanna</p>
+            <p class="details" style="color:black;">Instagram : ksrtc_tourizm</p>
+            </div>
+            <div class="middle">
+                <img src="{% static '/images/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:85px;position:relative;z-index: 2;">
+                        <img src="{% static '/images/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                        <img src="{% static '/images/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                        <img src="{% static '/images/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                        </div>
+                        <div class="fright">
+                        <p id="implinks" style="margin-top:30px;color:black;font-weight:bold;font-size:24px;">Important Links</p>
+                        <a href="{% url 'package' %}" style="color:black;text-decoration:none;margin-top:20px;position:relative;z-index:1;" target="_blank"><p class="link">Trip Plan</p></a>
+                        <a href="{% url 'aboutus' %}" style="color:black;text-decoration:none;margin-top:55px;position:relative;z-index:1" target="_blank"><p class="link">About us</p></a>
+                        <a href="{% url 'mytrips' %}" style="color:black;text-decoration:none;margin-top:88px;position:relative;z-index:1" target="_blank"><p class="link">My Trip</p></a>
+                        <a href="{% url 'contactus' %}" style="color:black;text-decoration:none;margin-top:120px;position:relative;z-index:1;" target="_blank"><p class="link">Contact Us</p></a>
+            </div>
+            </div>
+        </div>
+    <script src="{% static '/javascript/seatbk.js' %}"></script>
+</body>
+</html>

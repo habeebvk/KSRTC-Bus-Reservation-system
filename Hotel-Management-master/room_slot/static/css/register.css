@@ -1,0 +1,79 @@
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D3D0D0;
+        }
+        .container{
+            width: 550px;
+            height: 600px;
+            background-color:white;
+            padding: 30px;
+            margin: 50px auto;
+        }
+        h1{
+            text-align: center;
+            font-family:'Nunito',sans-serif;
+        }
+        form{
+            width:100% ;
+            height: 50px;
+        }
+       #textfield{
+          width: 90%;
+          height: 50px;
+          margin-top: 30px;
+          outline: none;
+          border: none;
+          padding-left: 15px;  
+          border-radius: 30px;
+          border-bottom-width: 2px;
+          font-size: 17px;
+          margin-left: 20px;
+          background-color: #d3d3d3;
+        }
+        #textfield1{
+            width: 90%;
+            height: 50px;
+            outline: none;
+            border: none;
+            padding-left: 15px;  
+            border-radius: 30px;
+            border-bottom-width: 2px;
+            font-size: 17px;
+            margin-left: 20px;
+            background-color: #d3d3d3;
+          }
+        input::placeholder{
+            color: black;
+        }
+        .btn{
+            font-family: 'Poppins',sans-serif;
+            font-size: 30px;
+            height: 130%;
+            width: 90%;
+            border: none;
+            outline: none;
+            color: white;
+            padding-left: 0;
+            border-radius: 9px;
+            margin-top: 20px;
+            margin-left: 20px;
+            background-color: #008b8b;
+            cursor: pointer;
+        }
+        .p1{
+           margin-left: 120px;
+           margin-top: 30px;
+        }
+        .p2{
+            margin-left: 285px;
+            margin-top: -18px;
+            color: red;
+        }
+        a{
+            text-decoration: none;
+        }

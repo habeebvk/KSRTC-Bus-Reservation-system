@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/packages.css' %}"> 
+    {% comment %} <link rel="stylesheet" href="{% static '/css/main_styles.css' %}"> {% endcomment %}
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Poppins:wght@300&display=swap');
+    </style>
+</head>
+<body style="height:800px;>
+<div class="container-fluid" style="margin-top:10px;">
+<div class="header">
+<div class="left">
+<img src="{% static '/logo.jpeg' %}" style="width:120px;height:100px;">
+<h1 id="text" style="font-weight:bold;">Kerala State <br> Road <br> Transport Corporation</h1>
+</div>
+<div class="right" style="width:650px;">
+  <button class="btn" onclick="link(this)" value="{% url 'package' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;margin-left:90px;">Trip Plan</button>
+            <button class="btn" onclick="link(this)" value="{% url 'home' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Bus</button>
+            <button class="btn" onclick="link(this)" value="{% url 'contactus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:112px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Contact Us</button>
+            <button class="btn" onclick="link(this)" value="{% url 'aboutus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">About Us</button>
+            {% comment %} <button class="btn" onclick="link(this)" value="{% url 'register' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Sign up</button> {% endcomment %}
+</div>
+<a href="{% url 'package' %}"><img src="{% static '/arrow.png' %}" style="width: 30px;height: 30px;margin-left:-400px;margin-top: 150px;"></a>
+<a href="{% url 'u_homepage' %}"><img src="{% static '/home.png' %}" style="width: 30px;height: 30px;margin-top:150px;"></a>
+</div>
+  <h1 id="packages" style="font-weight:bold;">Packages</h1>
+{% comment %} <div cards> {% endcomment %}
+  {% comment %} <div class="container">
+    <div class="row">
+      {% for dest in dests %}
+         <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+         <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+          <div class="position-relative p-5">
+            <i class="bi bi-card-list d-block display-1 fw-normal text-secondary mb-3"></i>
+            <h5 class="text-primary mb-0" id="city_name">{{dest.name}}</h5>
+            <div class="destination_image">
+              <img src="{{dest.img}}" alt="">
+              
+            </div>
+            <h3 class="mb-3">{{dest.desc}}</h3>
+            <h5 class="destination_price">From ${{dest.price}}</h5>
+            <br>
+              {% for val in place %}
+                 <button type="button"> <a href="{% url 'place-title' val.place %}">{{ val.place }}</a></button>
+              {% endfor %}
+             {% comment %} <a href="{% url 'munnar' %}"></a> {% endcomment %}
+            {% comment %} <a href="{% url 'detail' val=d.val %}">view more<i class="bi bi-arrow-right ms-2"></i></a> {% endcomment %}
+          {% comment %} </div>
+         </div>
+         </div>
+        
+      {% endfor%}
+    </div>
+  </div> {% endcomment %}
+
+        
+        
+        
+        {% comment %} {% for dest in dests %}
+        <div class="destination item">
+          <div class="destination_image">
+            <img src="{{dest.img.url}}" alt="">
+            
+          </div>
+          <div class="destination_content">
+            <div class="destination_title">{{dest.name}}</div>
+            <div class="destination_subtitle"><p>{{dest.desc}}</p></div>
+            <div class="destination_price">From ${{dest.price}}</div>
+            <button class="viewmore" onclick="link(this)" value="{% url 'fortkochi' %}">View More </button>
+          </div>
+        </div>
+
+        {% endfor %} {% endcomment %}
+
+      {% comment %} </div>
+    </div>
+  </div> {% endcomment %} 
+
+  <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top:-500px;">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            {% comment %} <h5 class="text-dark text-uppercase" style="letter-spacing: 3px;font-size:25px;margin-top:120px;">Packages<h5> {% endcomment %}
+            <!-- <h1 class="display-5 mb-0">Our Excellent CCTV Security Services</h1> -->
+        </div>
+            <div class="container">
+                <div class="row">
+                    {% for d in city %}
+                   <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                       <div class="service-item bg-dark border-bottom border-5 border-light rounded">
+                           <div class="position-relative p-5" style="height:550px;" style="margin-top:20px;background-color:black;height:550px;">
+                              <i class="bi bi-card-list d-block display-1 fw-normal text-white mb-3"></i>
+                              <div class="position-relative p-5">
+                                <img style= "margin-right:100px;width:300px;height:170px;margin-left:-70px;margin-top:-90px;" src="/media/{{d.img}}/">
+                              </div>
+                              <h5 class="text-white mb-0" id="city_name" style="font-family:'poppins',sans-serif;">{{d.name}}</h5><br>
+                              <h3 class="text-white" style="font-family:'poppins',sans-serif;font-size:20px;">{{d.price}} </h3>
+                              <h5 class="text-white"  style="font-family:'Nunito',sans-serif;">{{d.desc}}</h5>
+                        <a href="{% url 'city_detail' val=d.name %}" style="text-decoration:none;color:white;font-family:'Nunito',sans-serif;">view more<i class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+{% comment %} <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 380px;margin-top: -400px;margin-bottom: 190px;">
+    <img src="https://images.unsplash.com/photo-1618979306737-081b98715fc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmVsbGl5YW1wYXRoeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text">NELLIYAMPATHY <br>Malappuram-Nelliyampathy <br>Per head Rs1000/- 3 days Nelliyampathy is a hill station surrounded by tea and coffee plantations.A viewpoint called Seethargund situated 8 km away from Nelliyampathy.</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'nelliyampathy' %}">View More </button></a>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 100px;margin-top: -630px;margin-bottom: 400px;">
+    <img src="https://th.bing.com/th/id/R.6e7c7f48468a01fe646e4b9c5c75bf6e?rik=k6FuSoORQH0DFQ&riu=http%3a%2f%2f4.bp.blogspot.com%2f-rKwlNmB5zTU%2fUzrsY_M1QTI%2fAAAAAAAAAIo%2fXHyjjpCa680%2fs1600%2fmunnar-photo.jpg&ehk=Eaqdoe2n%2bd1k3tI8YFcWJ0bnpm%2fa6vrFxYqRJReFbKE%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">MUNNAR <br>Malappuram-Munnar<br>Per head Rs1000/- 3 days <br>Munnar is a town and hill station the Idukki district of the southwestern Indian state of Kerala.Munnar is also called the "Kashmir of South India".</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'munnar' %}">View More </button>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 100px;margin-top: -840px;margin-bottom: 400px;margin-left: 660px;">
+    <img src="https://images.thrillophilia.com/image/upload/s--IkXvHraG--/c_fill,f_auto,fl_strip_profile,h_800,q_auto,w_1300/v1/images/photos/000/115/438/original/1502369509_must-visit-places-ooty.jpg.jpg?1502369509" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">OOTY <br>Malappuram-Ooty <br>Per head Rs1000/- 3 days. <br>Ooty is a popular hill station located in the Nilgiri Hills.Ootacamund was rated the best hill station in means of hospitality and nature passing.</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'ooty' %}">View More </button>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 100px;margin-top: -840px;margin-bottom: 400px;margin-left: 940px;">
+    <img src="https://th.bing.com/th/id/OIP.3OQZrN-dvwxJlAuwA92S5AHaEL?pid=ImgDet&rs=1" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">COORG <br>Malappuram-Coorg<br>Per head Rs1500/- 3 days <br>Kodagu rated as one of the top hill station and attractions include Talakaveri,Abbey Falls,Iruppu Falls and Tibetan Golden Temple</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'coorg' %}">View More </button>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 660px;margin-top:-350px">
+    <img src="https://www.goingindiaa.com/wp-content/uploads/2019/04/kodaikanal.jpg"  class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">KODAIKANAL <br>Malappuram-Kodaikanal <br>Per head Rs1000/- 3days<br>Kodaikanal is a hill station located in Dindigul district in TamilNadu state of Kerala.Kodaikanal means "The Gift of the Forest".</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'kodaikanal' %}">View More </button>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 380px;margin-top: -440px;">
+    <img src="https://edge.ixigo.com/ixi-api/img/5167db97e4b05d9323644e9b_600x315.jpg" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">WAYANAD <br>Malappuram-Wayanad <br>Per head Rs1000/- 3 days <br>Wayanad is a district in the north-east state Kerala.Its the only plateau in Kerala and forms a continuation of the Mysore Plateau</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'wayanad' %}">View More </button>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 100px;margin-top:-440px">
+    <img src="https://images.yourstory.com/production/document_image/mystoryimage/dhs4e6d3-mysore-palace.png?fm=png&auto=format" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">MYSORE <br>Malappuram-Mysore <br>Per head Rs2000/- 3 days <br>Mysore is situated at the foothills of Chamundi Hills.Its noted for its heritage structures and palaces including the Mysore Palace</p>
+      <button class="viewmore" onclick="link(this)" value="{% url 'mysore' %}">View More </button>
+    </div>
+  </div>
+  <div class="card" style="width: 260px;height: 440px;background-color: white;margin-left: 940px;margin-top: -440px;">
+    <img src="data:image/jpeg;base64,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" class="card-img-top" >
+    <div class="card-body">
+      <p class="card-text">FORT KOCHI <br>Malappuram-Fort kochi <br>Per head Rs1000/- 3 days <br>Fort Kochi is a neighbourhood of Cochin city,bounded by islands and islets to south-west of the Kochi known as Old Cochin.
+    </p>  <button class="viewmore" onclick="link(this)" value="{% url 'fortkochi' %}">View More </button>
+    </div>
+  </div><br><br><br>
+</div> 
+</div> {% endcomment %}
+<div class="footer"  style="width:1360px;margin-left:-120px;margin-top:110px;height:270px;">
+  <div class="fleft">
+    <div class="icons" style="margin-top:5px;">
+      <img src="{% static '/telephone.png' %}" width="20px" height="20px" style="margin-left:30px;margin-top:85px;position:relative;z-index: 2;">
+      <img src="{% static '/twitter.png' %}" width="20px" height="20px" style="margin-top:20px;margin-left:30px;position:relative;z-index: 2;">
+      <img src="{% static '/pin.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+      <img src="{% static '/inst.png' %}" width="20px" height="20px" style="margin-top:18px;margin-left:30px;position:relative;z-index: 2;">
+    </div>
+      <p id="contact" style="color:black;font-weight:bold;font-size:24px">About Us</p>
+      <p class="details" style="color:black;">Phone : +91 534645634</p>
+      <p class="details" style="color:black;">Twitter : ksrtctrip123</p>
+      <p class="details" style="color:black;">Malappuram,Perinthalmanna</p>
+      <p class="details" style="color:black;">Instagram : ksrtc_tourizm</p>
+  </div>
+  <div class="middle" >
+      <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:90px;position:relative;z-index: 2;color:black;">
+              <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:20px;position:relative;z-index: 2;color:black;">
+              <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:20px;position:relative;z-index: 2;">
+              <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 170px;margin-top:20px;position:relative;z-index: 2;">
+  </div>
+  <div class="fright">
+          <p id="implinks" style="margin-top:30px;color:black;font-weight:bold;font-size:24px;">Important Links</p>
+              <a href="{% url 'package' %}" style="text-decoration:none;margin-top:20px;position:relative;z-index:1;" target="_blank"><p class="link" style="color:black;margin-top:20px;">Trip Plan</p></a>
+              <a href="{% url 'aboutus' %}" style="color:black;text-decoration:none;margin-top:55px;position:relative;z-index:1" target="_blank"><p class="link" style="color:black;margin-top:15px;">About us</p></a>
+              <a href="{% url 'home' %}" style="color:black;text-decoration:none;margin-top:88px;position:relative;z-index:1" target="_blank"><p class="link" style="color:black;margin-top:12px;">Bus</p></a>
+              <a href="{% url 'contactus' %}" style="color:black;text-decoration:none;margin-top:120px;position:relative;z-index:1;" target="_blank"><p class="link" style="color:black;margin-top:15px;">Contact Us</p></a>
+  </div>
+</div>
+<script>
+  function link(link){
+    console.log(link.value);
+    location.href=link.value;
+    // window.open(link.value)
+  }
+</script>
+</body>
+</html> 
