@@ -78,7 +78,6 @@ class Destination(models.Model):
     img = models.ImageField(upload_to='media')
     desc = models.TextField()
     price = models.IntegerField() 
-    # category = models.CharField(choices=CATEGORY_CHOICES, max_length=100, null=True, blank=True)   
 
 
 class Dest(models.Model):
@@ -90,91 +89,6 @@ class Dest(models.Model):
     
 def _str_(self):
     return self.name
-
-# class Bus(models.Model):
-    
-#     bus_no = models.CharField(max_length=30)
-#     source = models.CharField(max_length=30)
-#     desti = models.CharField(max_length=30)
-#     image = models.ImageField(null=True, upload_to='media')
-#     price = models.DecimalField(decimal_places=2, max_digits=6)
-#     date = models.DateField()
-#     time = models.TimeField()
-#     ticket_no = models.CharField(max_length=100)
-
-#     def __str__(self):
-#         return self.name
-
-
-# class casamontana(models.Model):
-
-#     ckeck_in = models.DateField(max_length=)     
-# 
-# class hotel(models.Model):
-#     city = models.CharField(default=None, max_length=64)
-#     name = models.CharField(max_length=100)
-#     number_of_rooms = models.DecimalField(decimal_places=0, max_digits=2)
-#     type = models.CharField(max_length=30)
-#     imgurls = models.CharField(default=None, max_length=64)
-#     rating = models.CharField(default=0, max_length=64)   
-#     price = models.FloatField(default=random_price)
-#     def __str__(self):
-#         return self.city
-
-# class Room(models.Model):
-#     ROOM_CATEGORIES = (
-#         ('YAC', 'AC'),
-#         ('NAC', 'NON-AC'),
-#         ('DEL', 'DELURE'),
-#         ('KIN', 'KING'),
-#         ('QUE', 'QUEEN'),
-
-#     )
-#     number=models.IntegerField()
-#     category = models.CharField(max_length=3, choices=ROOM_CATEGORIES)
-#     beds = models.IntegerField()
-#     capacity = models.IntegerField()   
-
-#     def __str__(self):
-#         return f'{self.number}. {self.category} with {self.beds} beds for {self.capacity} people'   
-
-# class Booking(models.Model):
-#     hotel = models.ForeignKey(hotel, related_name="booking", on_delete=models.CASCADE)
-#     tracking_id = models.CharField(default='000', max_length=64)
-
-#     first_name = models.CharField(default=None, max_length=64)
-#     last_name = models.CharField(default=None, max_length=64)
-#     email = models.CharField(default=None, max_length=64)
-#     phone = models.CharField(default=None, max_length=64)
-
-#     room = models.IntegerField(default=1)
-#     adult = models.IntegerField(default=1)
-#     child = models.IntegerField(default=0)
-
-#     checkin_date = models.CharField(default=None , max_length=64)
-#     checkout_date = models.CharField(default=None, max_length=64)
-#     booking_date = models.DateTimeField(auto_now_add=True)
-#     price = models.CharField(max_length=64, default=None, null=False)
-
-#     user = models.ForeignKey(User, related_name="booking", on_delete=models.SET_NULL, default=None, null=True, blank=True)
-
-
-#     def __str__(self):
-#         return self.tracking_id    
-
-# class Transaction(models.Model):
-#     made_by = models.ForeignKey(User, related_name='transactions',
-#                                 on_delete=models.CASCADE)
-#     made_on = models.DateTimeField(auto_now_add=True)
-#     amount = models.IntegerField()
-#     order_id = models.CharField(unique=True, max_length=100, null=True, blank=True)
-#     checksum = models.CharField(max_length=100, null=True, blank=True)
-
-#     def save(self, *args, **kwargs):
-#         if self.order_id is None and self.made_on and self.id:
-#             self.order_id = self.made_on.strftime('PAY2ME%Y%m%dODR') + str(self.id)
-#         return super().save(*args, **kwargs)        
-
 
 class Hotels(models.Model):
     ROOM_CATEGORIES = (

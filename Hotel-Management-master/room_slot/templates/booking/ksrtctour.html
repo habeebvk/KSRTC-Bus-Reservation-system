@@ -59,27 +59,10 @@
 </marquee>
 <button id="btn" onclick="link(this)" value="{% url 'package' %}" style="font-weight:bold;">Book Now</button>
 <img src="https://img.onmanorama.com/content/dam/mm/en/travel/travel-news/images/2021/12/20/ksrtc-1.jpg" style="z-index:2;position:relative;width:100%;height:500px;">
-{% comment %} <h1 id="spots">Top Destinations </h1>
-<hr id="line" style="margin-top:10px;border:1px solid red">
-{% for i in  root1 %}
-  {% comment %} {% if forloop.last %} {% endcomment %}
-  {% comment %} <div class="card-group">
-    <div class="card" style="width: 18rem;">
-        <a href="{% url 'city_detail' val=i.name%}"><img style= "width:350px;height:400px;" src="/pics/{{i.image}}"/</a>
-        <div class="card-body">
-            <h5 class="card-title">{{i.name}}</h5>
-        </div>
-    </div>
-  </div> {% endcomment %}
-
- {% comment %} {% endif %} {% endcomment %}
-{% comment %} {% endfor %}  {% endcomment %}
-
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center mx-auto mb-5" >
             <h5 class="text-black text-uppercase" style="letter-spacing: 3px;color:black;font-size:25px;">Top Destinations</h5>
-            <!-- <h1 class="display-5 mb-0">Our Excellent CCTV Security Services</h1> -->
         </div>
             <div class="container">
                 <div class="row">
@@ -130,7 +113,6 @@
 <script>
     function link(link){
     console.log(link.value);
-    // location.href=link.value;
     window.open(link.value)
 }
 </script>

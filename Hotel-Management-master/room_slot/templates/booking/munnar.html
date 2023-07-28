@@ -52,7 +52,8 @@
                     <p class="description" style="margin-top:-20px;margin-right:220px;margin-left:200px;">{{val.desc_big}}</p>
                     <button id="bookin" onclick="link(this)" value="{% url 'home' %}" style="margin-top:-30px;margin-left:900px;">Book Now</button>
                     <button id="hotels" onclick="link(this)" value="{% url 'hotels' val=val.city %}" style="margin-top:10px;margin-left:900px;">Nearby Hotels</button>
-                {% endif %}
+                    <button onclick="link(this)" value="{% url 'home' %}" style="margin-top:-30px;margin-left:900px;">Book ow</button>
+                    {% endif %}
             {% endfor %}        
         </div>
         <div class="footer">
@@ -87,7 +88,6 @@
     <script>
         function link(link){
         console.log(link.value);
-        // location.href=link.value;
         window.open(link.value)
     }
     </script>

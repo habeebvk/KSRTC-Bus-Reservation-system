@@ -12,6 +12,28 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Poppins:wght@300&display=swap');
+        .btn{
+            font-family: 'poppins',sans-serif;
+            background-color: darkcyan;
+            width:110px;
+            height: 30px;
+            border-radius: 20px;
+            color: white;
+            border:none;
+            margin-top: 30px;
+        }
+        .btn:hover{
+            font-family: 'Poppins',sans-serif;
+            margin-left: 20px;
+            background-color:white;
+            width:110px;
+            height: 30px;
+            border-radius: 20px;
+            color: darkcyan;
+            border:2px solid darkcyan;
+            margin-top: 30px;
+            transition:all .2s ease-in;
+        }
     </style>
 </head>
 <body>
@@ -22,11 +44,10 @@
         <h1 id="text" style="font-weight:bold;">Kerala State <br> Road <br> Transport Corporation</h1>
         </div>
         <div class="right" style="width:650px;">
-            <button class="btn" onclick="link(this)" value="{% url 'package' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;margin-left:90px;">Trip Plan</button>
-            <button class="btn" onclick="link(this)" value="{% url 'home' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Bus</button>
-            <button class="btn" onclick="link(this)" value="{% url 'contactus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:112px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Contact Us</button>
-            <button class="btn" onclick="link(this)" value="{% url 'aboutus' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">About Us</button>
-            {% comment %} <button class="btn" onclick="link(this)" value="{% url 'register' %}" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Sign up</button> {% endcomment %}
+            <button class="btn" onclick="link(this)" value="{% url 'package' %}" style="margin-left:90px;">Trip Plan</button>
+            <button class="btn" onclick="link(this)" value="{% url 'home' %}">Bus</button>
+            <button class="btn" onclick="link(this)" value="{% url 'contactus' %}">Enquiry</button>
+            <button class="btn" onclick="link(this)" value="{% url 'aboutus' %}">About Us</button>
         </div>
         <a href="{% url 'u_homepage' %}"><img src="{% static '/arrow.png' %}" style="width: 30px;height: 30px;margin-left:-400px;margin-top: 150px;"></a>
         <a href="{% url 'u_homepage' %}"><img src="{% static '/home.png' %}" style="width: 30px;height: 30px;margin-top:150px;"></a>
@@ -56,10 +77,8 @@
                     </div>
                     
             </form>
-         </div>
-         {% comment %} <button class="btn3" style="font-family: 'poppins',sans-serif;background-color: darkcyan;width:100px;height: 30px;border-radius: 20px;color: white;border:none;margin-top: 30px;">Submit</button> {% endcomment %}
         </div>
-        {% comment %} <input type="text" style="width: 70%;height: 200px;margin-left: 100px;margin-top:-700px;background-color: #D9D9D9;border:none;border-radius: 5px;"> {% endcomment %}
+        </div>
         <h2 id="notice" style="margin-top:-570px;">Notice</h2>
         <div class="autoScroller-container" style="position: relative; overflow: hidden;">
             <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="3" behavior="scroll" height="130;" direction="up" loop="infinite" style="height: 200px;">
@@ -102,11 +121,6 @@
 
                     
           </div>
-          {% comment %} <div>
-          {% for i in noti %}
-          <p>{{i.notification}}</p>
-          {% endfor %}
-          </div> {% endcomment %}
         <div class="footer">
             <div class="fleft">
             <div class="icons">
@@ -122,10 +136,10 @@
             <p class="details" style="color:black;">Instagram : ksrtc_tourizm</p>
             </div>
             <div class="middle">
-                <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:85px;position:relative;z-index: 2;">
-                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
-                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
-                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 140px;margin-top:20px;position:relative;z-index: 2;">
+                <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 250px;margin-top:85px;position:relative;z-index: 2;">
+                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 250px;margin-top:20px;position:relative;z-index: 2;">
+                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 250px;margin-top:20px;position:relative;z-index: 2;">
+                        <img src="{% static '/1.png' %}" width="20px" height="20px" style="margin-left: 250px;margin-top:20px;position:relative;z-index: 2;">
                         </div>
                         <div class="fright">
                         <p id="implinks" style="margin-top:30px;color:black;font-weight:bold;font-size:24px;">Important Links</p>
